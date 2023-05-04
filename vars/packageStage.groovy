@@ -1,5 +1,5 @@
 
-def package(){
+def packageStage(){
     stage('Package'){
         try{
             sh 'mvn -B -DskipTests package dependency:copyDependencies'
