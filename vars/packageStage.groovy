@@ -3,7 +3,7 @@ def packageStage(){
     stage('Package'){
         try{
             sh 'mvn -B -DskipTests package dependency:copyDependencies'
-        }catch{
+        }catch(err){
 
         }finally{
             def currentResult = currentBuild.result
