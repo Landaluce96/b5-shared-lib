@@ -1,7 +1,7 @@
 
 def test(){
     withMaven(maven: 'jenkins-maven'){
-        mvn test
+        sh 'mvn test'
     }
     junit 'maven-log4j/target/surefire-reports/*.xml'
 }
