@@ -1,6 +1,8 @@
 
 def build(){
-    withMaven(maven: 'jenkins-maven'){
-        sh "mvn clean compile"
+    stage('Build'){
+        withMaven(maven: 'jenkins-maven'){
+            sh "mvn clean compile"
+        }
     }
 }
