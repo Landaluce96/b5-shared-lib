@@ -9,8 +9,9 @@ def packageStage(){
     }finally{
         def currentResult = currentBuild.result
         if (currentResult == 'SUCCESS') {
+            zip zipfile: 'app.zip', archive: true, overwrite: true, glob: 'target/*.jar,target/dependency'
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-            archiveArtifacts artifacts: 'target/dependency', fingerprint: true
+            archiveArtifacts artifacts: 'target/dependency/*.jar', fingerprint: true
         }	
     }
 }
