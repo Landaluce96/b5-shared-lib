@@ -3,12 +3,6 @@ def packageStage(){
     try{
         stage('Package'){
             sh 'mvn -B -DskipTests package dependency:copy-dependencies'
-        }
-    }catch(err){
-
-    }finally{
-        def currentResult = currentBuild.result
-        if (currentResult == 'SUCCESS') {
             echo "***************"
             echo "*** ARCHIVE ***"
             echo "***************"
@@ -18,6 +12,13 @@ def packageStage(){
             echo "***************"
             echo "*** ARCHIVE ***"
             echo "***************"
+        }
+    }catch(err){
+
+    }finally{
+        def currentResult = currentBuild.result
+        if (currentResult == 'SUCCESS') {
+            
         }	
     }
 }
