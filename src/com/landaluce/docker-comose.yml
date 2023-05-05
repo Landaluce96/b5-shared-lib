@@ -1,0 +1,5 @@
+services:
+  app:
+    image: 'B5-Jenkins-app:$BUILD_TAG'
+    build:
+      context: .
