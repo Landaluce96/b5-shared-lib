@@ -8,7 +8,7 @@ def packageStage(){
             echo "***************"
             zip zipfile: 'app.zip', archive: true, overwrite: true, glob: 'target/*.jar,target/dependency'
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-            archiveArtifacts artifacts: 'target/dependency', fingerprint: true
+            archiveArtifacts artifacts: 'target/dependency/', fingerprint: true
             echo "***************"
             echo "*** ARCHIVE ***"
             echo "***************"
