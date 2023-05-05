@@ -2,7 +2,7 @@
 def packageStage(){
     try{
         stage('Package'){
-            sh 'mvn -B -DskipTests package dependency:copyDependencies'
+            sh 'mvn -B -DskipTests package dependency:copy-dependencies'
         }
     }catch(err){
 
