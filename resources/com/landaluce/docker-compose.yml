@@ -1,5 +1,5 @@
 services:
   app:
-    image: 'B5-Jenkins-app:$BUILD_ID'
+    image: 'b5-jenkins-app:$BUILD_ID'
     build:
       context: .
