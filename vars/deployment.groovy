@@ -7,7 +7,7 @@ def deploy(){
         def dockerCompose = libraryResource ('com/landaluce/docker-compose.yml')
         writeFile (file: 'docker-compose.yml', text: dockerCompose)
         
-        withDocker(docker: 'Docker'){
+        withTool('Docker'){
             sh 'docker compose build'
         }        
     }
